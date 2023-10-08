@@ -56,6 +56,23 @@
             android:name=".OpenedClass"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".AboutUs"
+            android:theme="@android:style/Theme.Dialog"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.septemberapp.ABOUTUS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Prefs"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.septemberapp.PREFS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 public class Menu extends ListActivity {
 
     String classes[] ={"MainScreen","TextPlay","Email",
-                        "Camera","Data","Example5","Example6","Example7"};
+                        "Camera","Data","Exit","Example6","Example7"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +34,9 @@ public class Menu extends ListActivity {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        if (choice == "Exit"){
+            finish();
+        }
 
         //Intent ourIntent = new Intent(Menu.this,classes[position].getClass());
 
@@ -47,19 +50,6 @@ public class Menu extends ListActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.aboutUs:
-
-                break;
-            case R.id.preferences:
-
-                break;
-
-        }
-        return false;
-    }
 
 
 }

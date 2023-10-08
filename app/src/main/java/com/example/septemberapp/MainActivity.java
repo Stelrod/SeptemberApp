@@ -5,8 +5,10 @@ import static com.example.septemberapp.R.menu.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.AdapterView;
@@ -19,7 +21,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.intro);
-        mediaPlayer.start();
+        SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean music = getPrefs.getBoolean("checkbox",true);
+        if (music == true)
+            mediaPlayer.start();
+
+
         Thread timer = new Thread(){
           public void run(){
               try {
